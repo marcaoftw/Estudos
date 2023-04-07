@@ -1,57 +1,99 @@
-﻿using ExerciciosClasse;
+﻿using ExerciciosClasseAtributosMetodos;
 using System;
-using System.Security.Cryptography;
+using System.Globalization;
 
-namespace ExerciciosClasse
+namespace ExerciciosClasseAtributosMetodos
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Pessoa p1 = new Pessoa();
-            Pessoa p2 = new Pessoa();
-            p1.Nome = "Carlos Silva";
-            p2.Nome = "Ana Marques";
-            p1.Salario = 6300;
-            p2.Salario = 6700;
+          
+            Console.WriteLine("Qual é a cotação do Dólar?");
+            double cotacao =  double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.WriteLine("Quantos dólares vai comprar, em reais?");
+            double quantia = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            Console.WriteLine("Dados da Primeira Pessoa:");
-            Console.WriteLine("Nome: " + p1.Nome);
-            Console.WriteLine("Idade: " + p1.Salario);
-            Console.WriteLine("Dados da Segunda Pessoa:");
-            Console.WriteLine("Nome: " + p2.Nome);
-            Console.WriteLine("Idade: " + p2.Salario);
-            Console.WriteLine("Salário médio: " + (p1.Salario + p2.Salario)/2);
+
+            Console.WriteLine("Valor a ser pago em reais = " + ConversorDeMoeda.DolarParaReal(cotacao, quantia).ToString("F2", CultureInfo.InvariantCulture));
+
+
         }
     }
 }
 
 
 
+
+/*
+
+{
+    Aluno aln = new Aluno();
+
+    Console.Write("Nome do aluno: ");
+    aln.Name = Console.ReadLine();
+    Console.WriteLine("Digite as 3 notas do aluno: ");
+    aln.N1 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+    aln.N2 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+    aln.N3 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+    Console.WriteLine("NOTA FINAL = " + aln.NotaFinal());
+
+    if (aln.Aprovacao() == true)
+    {
+        Console.WriteLine("APROVADO!");
+    }
+    else
+    {
+        Console.WriteLine("REPROVADO!");
+        Console.WriteLine("NOTA FALTANTE: " + aln.NotaFaltante().ToString("F2", CultureInfo.InvariantCulture) + " PONTOS.");
+    }
+
+
+}
+*/
 /*
 {
-    Pessoa p1 = new Pessoa();
-    Pessoa p2 = new Pessoa();
-    p1.Nome = "Maria";
-    p2.Nome = "João";
-    p1.Idade = 17;
-    p2.Idade = 16;
+    static void Main(string[] args)
+    {
+        Funcionario F = new Funcionario();
 
-    Console.WriteLine("Dados da Primeira Pessoa:");
-    Console.WriteLine("Nome: " + p1.Nome);
-    Console.WriteLine("Idade: " + p1.Idade);
-    Console.WriteLine("Dados da Segunda Pessoa:");
-    Console.WriteLine("Nome: " + p2.Nome);
-    Console.WriteLine("Idade: " + p2.Idade);
+        Console.WriteLine("Nome: ");
+        F.Name = Console.ReadLine();
+        Console.WriteLine("Salário Bruto: ");
+        F.SalaryB = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+        Console.WriteLine("Imposto: ");
+        F.Taxes = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+        Console.WriteLine("Funcionário: " + F.Name + ", $ " + F.SalaryL());
+        Console.WriteLine("Digite a porcentagem para aumentar o salário: ");
+        double p = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+        F.BonusSalary(p);
+
+        Console.WriteLine("Dados Atualizados: " + F.Name + ", $ " + F.SalaryL());
+
+
+    }
 }
+
 */
 
 
+/*
+{
+    Retangulo R = new Retangulo();
 
+    Console.WriteLine("Entre a largura e altura do retângulo, respectivamente:");
+    R.Largura = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+    R.Altura = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
+    Console.WriteLine("AREA = " + R.Area());
+    Console.WriteLine("PERIMETRO = " + R.Perimetro());
+    Console.WriteLine("DIAGONAL = " + R.Diagonal());
 
-
-
+}
+*/
 
 
 
